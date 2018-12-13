@@ -18,20 +18,22 @@ namespace Projet_AFFICHEURFERMETTE.MDF.Classes
         private DateTime _DateNaissance;
         private string _Photo;
         private bool _Role;
+        private int _Position;
         #endregion
         #region Constructeurs
-        public C_Personne()
+        public C_PersonnePos()
         { }
-        public C_Personne(string Nom_, string Prenom_, DateTime DateNaissance_, string Photo_, bool Role_)
+        public C_PersonnePos(string Nom_, string Prenom_, DateTime DateNaissance_, string Photo_, bool Role_, int Position_)
         {
             Nom = Nom_;
             Prenom = Prenom_;
             DateNaissance = DateNaissance_;
             Photo = Photo_;
             Role = Role_;
+            Position = Position_;
         }
-        public C_Personne(int ID_, string Nom_, string Prenom_, DateTime DateNaissance_, string Photo_, bool Role_)
-         : this(Nom_, Prenom_, DateNaissance_, Photo_, Role_)
+        public C_PersonnePos(int ID_, string Nom_, string Prenom_, DateTime DateNaissance_, string Photo_, bool Role_, int Position_)
+         : this(Nom_, Prenom_, DateNaissance_, Photo_, Role_, Position_)
         {
             ID = ID_;
         }
@@ -66,6 +68,11 @@ namespace Projet_AFFICHEURFERMETTE.MDF.Classes
         {
             get { return _Role; }
             set { _Role = value; }
+        }
+        public int Position
+        {
+            get { return _Position; }
+            set { _Position = value; }
         }
         #endregion
     }

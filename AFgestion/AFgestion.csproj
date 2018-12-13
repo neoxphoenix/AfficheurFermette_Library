@@ -57,6 +57,8 @@
     <Compile Include="G_PhotoEvenement.cs" />
     <Compile Include="G_Plat.cs" />
     <Compile Include="G_TitreEvenement.cs" />
+    <Compile Include="G_ViewEvenement.cs" />
+    <Compile Include="G_ViewMenuDuJour.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
