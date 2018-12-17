@@ -25,5 +25,7 @@ namespace Projet_AFFICHEURFERMETTE.MDF.Gestion
         { return new A_ViewMenuDuJour(ChaineConnexion).Lire(Index); }
         public C_ViewMenuDuJour Lire_ID(int ID)
         { return new A_ViewMenuDuJour(ChaineConnexion).Lire_ID(ID); }
+        public C_ViewMenuDuJour Lire_Date(DateTime Date)
+        { return new A_ViewMenuDuJour(ChaineConnexion).Lire_Date(Date); }
     }
 }

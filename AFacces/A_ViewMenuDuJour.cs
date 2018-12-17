@@ -60,5 +60,24 @@ namespace Projet_AFFICHEURFERMETTE.MDF.Acces
             Commande.Connection.Close();
             return res;
         }
+        public C_ViewMenuDuJour Lire_Date(DateTime date)
+        {
+            CreerCommande("SelectionnerViewMenuDuJour_Date");
+            Commande.Parameters.AddWithValue("@Date", date);
+            Commande.Connection.Open();
+            SqlDataReader dr = Commande.ExecuteReader();
+            C_ViewMenuDuJour res = new C_ViewMenuDuJour();
+            while (dr.Read())
+            {
+                res.ID = int.Parse(dr["ID"].ToString());
+                res.Date = DateTime.Parse(dr["Date"].ToString());
+                res.eNom = dr["eNom"].ToString();
+                res.pNom = dr["pNom"].ToString();
+                res.dNom = dr["dNom"].ToString();
+            }
+            dr.Close();
+            Commande.Connection.Close();
+            return res;
+        }
     }
 }

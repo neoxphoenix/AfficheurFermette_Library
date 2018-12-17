@@ -22,7 +22,7 @@ namespace Projet_AFFICHEURFERMETTE.MDF.Acces
         #endregion
         public List<C_ViewEvenement> Lire(string Index)
         {
-            CreerCommande("SelectionnerViewMenuDuJour");
+            CreerCommande("SelectionnerViewEvenement");
             Commande.Parameters.AddWithValue("@Index", Index);
             Commande.Connection.Open();
             SqlDataReader dr = Commande.ExecuteReader();
@@ -45,7 +45,7 @@ namespace Projet_AFFICHEURFERMETTE.MDF.Acces
         }
         public C_ViewEvenement Lire_ID(int ID)
         {
-            CreerCommande("SelectionnerViewMenuDuJour_ID");
+            CreerCommande("SelectionnerViewEvenement_ID");
             Commande.Parameters.AddWithValue("@ID", ID);
             Commande.Connection.Open();
             SqlDataReader dr = Commande.ExecuteReader();
@@ -59,6 +59,75 @@ namespace Projet_AFFICHEURFERMETTE.MDF.Acces
                 res.DateDebut = DateTime.Parse(dr["DateDebut"].ToString());
                 res.DateFin = DateTime.Parse(dr["DateFin"].ToString());
                 res.Description = dr["Description"].ToString();
+            }
+            dr.Close();
+            Commande.Connection.Close();
+            return res;
+        }
+        public List<C_ViewEvenement> Lire_DateDebut(DateTime dateDebut)
+        {
+            CreerCommande("SelectionnerViewEvenement_DateDebut");
+            Commande.Parameters.AddWithValue("@DateDebut", dateDebut);
+            Commande.Connection.Open();
+            SqlDataReader dr = Commande.ExecuteReader();
+            List<C_ViewEvenement> res = new List<C_ViewEvenement>();
+            while (dr.Read())
+            {
+                C_ViewEvenement tmp = new C_ViewEvenement();
+                tmp.ID = int.Parse(dr["ID"].ToString());
+                tmp.Titre = dr["Titre"].ToString();
+                tmp.Lieu = dr["Lieu"].ToString();
+                tmp.TypeEvenement = int.Parse(dr["TypeEvenement"].ToString());
+                tmp.DateDebut = DateTime.Parse(dr["DateDebut"].ToString());
+                tmp.DateFin = DateTime.Parse(dr["DateFin"].ToString());
+                tmp.Description = dr["Description"].ToString();
+                res.Add(tmp);
+            }
+            dr.Close();
+            Commande.Connection.Close();
+            return res;
+        }
+        public List<C_ViewEvenement> Lire_DateFin(DateTime dateFin)
+        {
+            CreerCommande("SelectionnerViewEvenement_DateFin");
+            Commande.Parameters.AddWithValue("@DateFin", dateFin);
+            Commande.Connection.Open();
+            SqlDataReader dr = Commande.ExecuteReader();
+            List<C_ViewEvenement> res = new List<C_ViewEvenement>();
+            while (dr.Read())
+            {
+                C_ViewEvenement tmp = new C_ViewEvenement();
+                tmp.ID = int.Parse(dr["ID"].ToString());
+                tmp.Titre = dr["Titre"].ToString();
+                tmp.Lieu = dr["Lieu"].ToString();
+                tmp.TypeEvenement = int.Parse(dr["TypeEvenement"].ToString());
+                tmp.DateDebut = DateTime.Parse(dr["DateDebut"].ToString());
+                tmp.DateFin = DateTime.Parse(dr["DateFin"].ToString());
+                tmp.Description = dr["Description"].ToString();
+                res.Add(tmp);
+            }
+            dr.Close();
+            Commande.Connection.Close();
+            return res;
+        }
+        public List<C_ViewEvenement> Lire_Date(DateTime date)
+        {
+            CreerCommande("SelectionnerViewEvenement_Date");
+            Commande.Parameters.AddWithValue("@Date", date);
+            Commande.Connection.Open();
+            SqlDataReader dr = Commande.ExecuteReader();
+            List<C_ViewEvenement> res = new List<C_ViewEvenement>();
+            while (dr.Read())
+            {
+                C_ViewEvenement tmp = new C_ViewEvenement();
+                tmp.ID = int.Parse(dr["ID"].ToString());
+                tmp.Titre = dr["Titre"].ToString();
+                tmp.Lieu = dr["Lieu"].ToString();
+                tmp.TypeEvenement = int.Parse(dr["TypeEvenement"].ToString());
+                tmp.DateDebut = DateTime.Parse(dr["DateDebut"].ToString());
+                tmp.DateFin = DateTime.Parse(dr["DateFin"].ToString());
+                tmp.Description = dr["Description"].ToString();
+                res.Add(tmp);
             }
             dr.Close();
             Commande.Connection.Close();

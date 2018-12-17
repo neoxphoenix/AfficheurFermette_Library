@@ -25,6 +25,12 @@ namespace Projet_AFFICHEURFERMETTE.MDF.Gestion
         { return new A_ViewEvenement(ChaineConnexion).Lire(Index); }
         public C_ViewEvenement Lire_ID(int ID)
         { return new A_ViewEvenement(ChaineConnexion).Lire_ID(ID); }
+        public List<C_ViewEvenement> Lire_DateDebut(DateTime DateDebut)
+        { return new A_ViewEvenement(ChaineConnexion).Lire_DateDebut(DateDebut); }
+        public List<C_ViewEvenement> Lire_DateFin(DateTime DateFin)
+        { return new A_ViewEvenement(ChaineConnexion).Lire_DateFin(DateFin); }
+        public List<C_ViewEvenement> Lire_Date(DateTime Date)
+        { return new A_ViewEvenement(ChaineConnexion).Lire_Date(Date); }
         public List<C_PhotoEvenement> LirePhotosEvenement(int ID)
         { return new A_ViewEvenement(ChaineConnexion).LirePhotosEvenement(ID); }
         public List<C_Personne> LirePersonnesEvenement(int ID)
