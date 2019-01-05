@@ -198,5 +198,29 @@ namespace Projet_AFFICHEURFERMETTE.MDF.Acces
             Commande.Connection.Close();
             return res;
         }
+
+        public List<C_ViewEvenement> Lire_DateNextEvents(DateTime date)
+        {
+            CreerCommande("SelectionnerViewEvenement_DateNextEvents");
+            Commande.Parameters.AddWithValue("@Date", date);
+            Commande.Connection.Open();
+            SqlDataReader dr = Commande.ExecuteReader();
+            List<C_ViewEvenement> res = new List<C_ViewEvenement>();
+            while (dr.Read())
+            {
+                C_ViewEvenement tmp = new C_ViewEvenement();
+                tmp.ID = int.Parse(dr["ID"].ToString());
+                tmp.Titre = dr["Titre"].ToString();
+                tmp.Lieu = dr["Lieu"].ToString();
+                tmp.TypeEvenement = int.Parse(dr["TypeEvenement"].ToString());
+                tmp.DateDebut = DateTime.Parse(dr["DateDebut"].ToString());
+                tmp.DateFin = DateTime.Parse(dr["DateFin"].ToString());
+                tmp.Description = dr["Description"].ToString();
+                res.Add(tmp);
+            }
+            dr.Close();
+            Commande.Connection.Close();
+            return res;
+        }
     }
 }

@@ -14,9 +14,16 @@ namespace Projet_AFFICHEURFERMETTE.MDF.Gestion
     public class G_ViewEvenement : G_Base
     {
         #region Constructeurs
+        /// <summary>
+        /// 
+        /// </summary>
         public G_ViewEvenement()
          : base()
         { }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sChaineConnexion"></param>
         public G_ViewEvenement(string sChaineConnexion)
          : base(sChaineConnexion)
         { }
@@ -77,5 +84,13 @@ namespace Projet_AFFICHEURFERMETTE.MDF.Gestion
         /// <returns>Participants et leurs positions</returns>
         public List<C_PersonnePos> LireClassementEvenement(int ID)
         { return new A_ViewEvenement(ChaineConnexion).LireClassementEvenement(ID); }
+        /// <summary>
+        /// Récupère les prochain événements à venir
+        /// </summary>
+        /// <param name="Date">A partir de la date</param>
+        /// <returns></returns>
+        public List<C_ViewEvenement> Lire_DateNextEvents(DateTime Date)
+        { return new A_ViewEvenement(ChaineConnexion).Lire_DateNextEvents(Date); }
+
     }
 }
