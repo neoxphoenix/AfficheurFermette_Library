@@ -13,19 +13,17 @@ namespace Projet_AFFICHEURFERMETTE.MDF.Classes
  {
   #region Données membres
   private int _ID;
-  private int _IDevenement;
   private string _Titre;
   #endregion
   #region Constructeurs
   public C_TitreEvenement()
   { }
-  public C_TitreEvenement(int IDevenement_, string Titre_)
+  public C_TitreEvenement(string Titre_)
   {
-   IDevenement = IDevenement_;
    Titre = Titre_;
   }
-  public C_TitreEvenement(int ID_, int IDevenement_, string Titre_)
-   : this(IDevenement_, Titre_)
+  public C_TitreEvenement(int ID_, string Titre_)
+   : this(Titre_)
   {
    ID = ID_;
   }
@@ -35,11 +33,6 @@ namespace Projet_AFFICHEURFERMETTE.MDF.Classes
   {
    get { return _ID; }
    set { _ID = value; }
-  }
-  public int IDevenement
-  {
-   get { return _IDevenement; }
-   set { _IDevenement = value; }
   }
   public string Titre
   {

@@ -21,10 +21,10 @@ namespace Projet_AFFICHEURFERMETTE.MDF.Gestion
    : base(sChaineConnexion)
   { }
   #endregion
-  public int Ajouter(int IDevenement, string Lieu)
-  { return new A_LieuEvenement(ChaineConnexion).Ajouter(IDevenement, Lieu); }
-  public int Modifier(int ID, int IDevenement, string Lieu)
-  { return new A_LieuEvenement(ChaineConnexion).Modifier(ID, IDevenement, Lieu); }
+  public int Ajouter(string Lieu)
+  { return new A_LieuEvenement(ChaineConnexion).Ajouter(Lieu); }
+  public int Modifier(int ID, string Lieu)
+  { return new A_LieuEvenement(ChaineConnexion).Modifier(ID, Lieu); }
   public List<C_LieuEvenement> Lire(string Index)
   { return new A_LieuEvenement(ChaineConnexion).Lire(Index); }
   public C_LieuEvenement Lire_ID(int ID)

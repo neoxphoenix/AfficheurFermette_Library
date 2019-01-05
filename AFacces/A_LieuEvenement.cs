@@ -20,13 +20,12 @@ namespace Projet_AFFICHEURFERMETTE.MDF.Acces
   	: base(sChaineConnexion)
   { }
   #endregion
-  public int Ajouter(int IDevenement, string Lieu)
+  public int Ajouter(string Lieu)
   {
    CreerCommande("AjouterLieuEvenement");
    int res = 0;
    Commande.Parameters.Add("ID", SqlDbType.Int);
    Direction("ID", ParameterDirection.Output);
-   Commande.Parameters.AddWithValue("@IDevenement", IDevenement);
    Commande.Parameters.AddWithValue("@Lieu", Lieu);
    Commande.Connection.Open();
    Commande.ExecuteNonQuery();
@@ -34,12 +33,11 @@ namespace Projet_AFFICHEURFERMETTE.MDF.Acces
    Commande.Connection.Close();
    return res;
   }
-  public int Modifier(int ID, int IDevenement, string Lieu)
+  public int Modifier(int ID, string Lieu)
   {
    CreerCommande("ModifierLieuEvenement");
    int res = 0;
    Commande.Parameters.AddWithValue("@ID", ID);
-   Commande.Parameters.AddWithValue("@IDevenement", IDevenement);
    Commande.Parameters.AddWithValue("@Lieu", Lieu);
    Commande.Connection.Open();
    Commande.ExecuteNonQuery();
@@ -57,7 +55,6 @@ namespace Projet_AFFICHEURFERMETTE.MDF.Acces
    {
     C_LieuEvenement tmp = new C_LieuEvenement();
     tmp.ID = int.Parse(dr["ID"].ToString());
-    tmp.IDevenement = int.Parse(dr["IDevenement"].ToString());
     tmp.Lieu = dr["Lieu"].ToString();
     res.Add(tmp);
 			}
@@ -75,7 +72,6 @@ namespace Projet_AFFICHEURFERMETTE.MDF.Acces
    while (dr.Read())
    {
     res.ID = int.Parse(dr["ID"].ToString());
-    res.IDevenement = int.Parse(dr["IDevenement"].ToString());
     res.Lieu = dr["Lieu"].ToString();
    }
 			dr.Close();
