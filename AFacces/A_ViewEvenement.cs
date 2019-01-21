@@ -177,7 +177,7 @@ namespace Projet_AFFICHEURFERMETTE.MDF.Acces
         }
         public List<C_PersonnePos> LireClassementEvenement(int ID)
         {
-            CreerCommande("SelectionnerPersonnesEvenement");
+            CreerCommande("SelectionnerClassementEvenement");
             Commande.Parameters.AddWithValue("@ID", ID);
             Commande.Connection.Open();
             SqlDataReader dr = Commande.ExecuteReader();
