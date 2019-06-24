@@ -21,10 +21,10 @@ namespace Projet_AFFICHEURFERMETTE.MDF.Gestion
    : base(sChaineConnexion)
   { }
   #endregion
-  public int Ajouter(string nom, int Type)
-  { return new A_Plat(ChaineConnexion).Ajouter(nom, Type); }
-  public int Modifier(int ID, string nom, int Type)
-  { return new A_Plat(ChaineConnexion).Modifier(ID, nom, Type); }
+  public int Ajouter(string nom, int Type, string Photo)
+  { return new A_Plat(ChaineConnexion).Ajouter(nom, Type, Photo); }
+  public int Modifier(int ID, string nom, int Type, string Photo)
+  { return new A_Plat(ChaineConnexion).Modifier(ID, nom, Type, Photo); }
   public List<C_Plat> Lire(string Index)
   { return new A_Plat(ChaineConnexion).Lire(Index); }
   public C_Plat Lire_ID(int ID)

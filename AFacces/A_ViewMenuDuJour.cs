@@ -33,8 +33,11 @@ namespace Projet_AFFICHEURFERMETTE.MDF.Acces
                 tmp.ID = int.Parse(dr["ID"].ToString());
                 tmp.Date = DateTime.Parse(dr["Date"].ToString());
                 tmp.eNom = dr["eNom"].ToString();
+                tmp.ePhoto = dr["ePhoto"].ToString();
                 tmp.pNom = dr["pNom"].ToString();
+                tmp.pPhoto = dr["pPhoto"].ToString();
                 tmp.dNom = dr["dNom"].ToString();
+                tmp.dPhoto = dr["dPhoto"].ToString();
                 res.Add(tmp);
             }
             dr.Close();
@@ -53,8 +56,11 @@ namespace Projet_AFFICHEURFERMETTE.MDF.Acces
                 res.ID = int.Parse(dr["ID"].ToString());
                 res.Date = DateTime.Parse(dr["Date"].ToString());
                 res.eNom = dr["eNom"].ToString();
+                res.ePhoto = dr["ePhoto"].ToString();
                 res.pNom = dr["pNom"].ToString();
+                res.pPhoto = dr["pPhoto"].ToString();
                 res.dNom = dr["dNom"].ToString();
+                res.dPhoto = dr["dPhoto"].ToString();
             }
             dr.Close();
             Commande.Connection.Close();
@@ -72,8 +78,11 @@ namespace Projet_AFFICHEURFERMETTE.MDF.Acces
                 res.ID = int.Parse(dr["ID"].ToString());
                 res.Date = DateTime.Parse(dr["Date"].ToString());
                 res.eNom = dr["eNom"].ToString();
+                res.ePhoto = dr["ePhoto"].ToString();
                 res.pNom = dr["pNom"].ToString();
+                res.pPhoto = dr["pPhoto"].ToString();
                 res.dNom = dr["dNom"].ToString();
+                res.dPhoto = dr["dPhoto"].ToString();
             }
             dr.Close();
             Commande.Connection.Close();
